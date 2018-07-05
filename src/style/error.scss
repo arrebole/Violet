@@ -1,0 +1,22 @@
+@import 'mixins/layout.scss';
+article {
+  @include article;
+  min-height: 910px;
+}
+
+.r-error-nav {
+  @include nav;
+}
+
+.error-font-title {
+  padding: 20px 0px;
+  font-size: 23px;
+}
+
+.font-color-red {
+  color: red;
+}
+
+.font-color-yellow {
+  color: rgb(219, 150, 0);
+}

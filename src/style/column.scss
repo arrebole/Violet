@@ -1,0 +1,80 @@
+@import 'mixins/layout.scss';
+@mixin shadow {
+  box-shadow: 0 1px 1px 0 rgba(53, 53, 53, 0.15);
+}
+
+article {
+  @include article();
+  padding-bottom: 30px;
+}
+
+.r-column-nav {
+  @include nav();
+}
+
+.r-column-wrapper {
+  @include box();
+  @include shadow();
+  margin-top: 5px;
+  background-color: #fff;
+}
+//----------------------
+.r-column-introduce {
+  @include box();
+  @include shadow();
+  background-color: #fff;
+  margin-top: 15px;
+}
+
+.r-E_introduce-txt {
+  padding: 20px;
+  font-size: 14px;
+  min-height: 220px;
+  h2{
+    font-size: 16px;
+  }
+  p{
+    margin: 10px 0;
+  }
+}
+
+/* 目录 */
+
+.r-column-directory {
+  @include box();
+  @include shadow();
+  padding-bottom: 20px;
+}
+
+.r-ed-p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  padding: 0 20px;
+  margin: 2px 0;
+  background-color: #fff;
+}
+
+.r-title-i {
+  @extend .r-ed-p;
+  height: 50px;
+  margin-top: 1px;
+}
+
+/* 评论 */
+
+.r-column-comment {
+  @include box();
+  @include shadow();
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.r-C_item-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 70px;
+}

@@ -1,0 +1,16 @@
+@import 'mixins/layout.scss';
+
+article {
+  @include article;
+  padding-bottom: 60px;
+}
+
+.r-article-nav {
+  @include nav;
+}
+
+.r-article-list{
+  max-width: $maxWidth;
+  margin: auto;
+  padding: 0 10px;
+}
