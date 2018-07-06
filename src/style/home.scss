@@ -1,71 +1,13 @@
 
 @import "./mixins/layout.scss";
 //-------------轮播图------------
-@mixin r-home-wrapper($height) {
-  .r-home-wrapper {
-    height: $height;
-    background: #252525;
-  }
-} 
-
-//---------------------------
-.r-home-bar {
-  height: 35px;
-  width: 100%;
-  background: rgba(47,47,47,0.98);
-}
-
-.r-home-excellent {
-  min-height: 500px;
-  background: #f7f8fa;
-} 
-
-//-----------------分区 ------------------
-@mixin r-hz-card($display, $height, $margin, $max-width, $width, $padding) {
-  .r-home-zone {
-    padding: $padding 0;
-    text-align: center;
-  }
-  .r-hz-card {
-    width: $width;
-    max-width: $max-width;
-    height: $height;
-    margin: 0 $margin;
-    color: #707070;
-    font-size: 12px;
-    display: $display;
-    justify-content: space-around;
-    align-items: center;
-  }
-}
-
 
 /*--- 实现 ---*/ 
 article{
   @include article();
 }
 
-@media screen and (min-width: 1200px) {
-  @include r-home-wrapper($height: 440px);
-  @include r-hz-card( $display: inline-flex, $height: 260px, $margin: 20px, $max-width: 250px, $width: 20%, $padding: 25px);
-}
-
-@media screen and (max-width: 1200px) and (min-width: 992px) {
-  @include r-home-wrapper($height: 440px);
-  @include r-hz-card( $display: inline-flex, $height: 260px, $margin: 20px, $max-width: 250px, $width: 20%, $padding: 25px);
-}
-
-@media screen and (max-width: 992px) and (min-width: 768px) {
-  @include r-home-wrapper($height: 400px);
-  @include r-hz-card( $display: inline-flex, $height: 260px, $margin: 10px, $max-width: 250px, $width: 20%, $padding: 25px);
-}
-
-@media screen and (max-width: 768px) and (min-width: 575px) {
-  @include r-home-wrapper($height: 240px);
-  @include r-hz-card( $display: flex, $height: 130px, $margin: 0px, $max-width: 100%, $width: 100%, $padding: 0px);
-}
-
-@media screen and (max-width: 575px) {
-  @include r-home-wrapper($height: 150px);
-  @include r-hz-card( $display: flex, $height: 130px, $margin: 0px, $max-width: 100%, $width: 100%, $padding: 0px);
+.user-info{
+  @include box();
+  padding: 20px;
 }

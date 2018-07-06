@@ -5,9 +5,6 @@ article {
   padding-bottom: 60px;
 }
 
-.r-article-nav {
-  @include nav;
-}
 
 .r-article-list{
   max-width: $maxWidth;

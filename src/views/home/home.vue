@@ -1,71 +1,69 @@
 <template>
-  <div id="home-app">
-    <x-header></x-header>
+  <div class="home-app">
+
+    <x-header>
+
+      <el-breadcrumb separator="/" slot="x-hn-item">
+        <el-breadcrumb-item :to="{ name: 'Home' }">Arrebol</el-breadcrumb-item>
+      </el-breadcrumb>
+    </x-header>
+
+    <transition name="el-fade-in-linear">
+      <x-aside>
+      </x-aside>
+    </transition>
 
     <article>
-      <!-- 轮播图 -->
-      <section class="r-home-wrapper">
-      </section>
-      <!-- bar -->
-      <section class="r-home-bar"></section>
-      <!-- 分区 -->
-      <section class="r-home-zone">
 
-        <router-link :to="{ name: 'Articles'}">
-          <ivu-card class="r-hz-card">
-            <h2>
-              <ivu-icon type="pound"></ivu-icon> Article
-            </h2>
-          </ivu-card>
-        </router-link>
+      <section class="user-info">
 
-        <router-link :to="{ name: 'Video' }">
-          <ivu-card class="r-hz-card">
-            <h2>
-              <ivu-icon type="film-marker"></ivu-icon> Video
-            </h2>
-          </ivu-card>
-        </router-link>
+        <h1>系统信息</h1>
 
-        <router-link :to="{ name: 'Firmware' }">
-          <ivu-card class="r-hz-card">
-            <h2>
-              <ivu-icon type="cube"></ivu-icon> Firmware
-            </h2>
-          </ivu-card>
-        </router-link>
+        <h2>接入用户: customer </h2>
+        <h2>接入时间:  {{ date }}</h2>
+        <h2>接入系统: nginx静态处理 + nodejs(v1)</h2>
 
-        <router-link :to="{ name: 'Images' }">
-          <ivu-card class="r-hz-card">
-            <h2>
-              <ivu-icon type="image"></ivu-icon> Image
-            </h2>
-          </ivu-card>
-        </router-link>
+        <br/>
+        <br/>
+        <h1>建设进度</h1>
+        <h2>基础建设已完成50%</h2>
+        <h2>可以点击左上角菜单随意访问</h2>
+
+        <br/>
+        <br/>
+        <h1>测试区</h1>
+        <h2>1: <router-link to="/articles">articles</router-link></h2>
 
       </section>
-      <!-- show -->
-      <section class="r-home-excellent"></section>
+
     </article>
-    <!-- footer -->
-    <x-footer></x-footer>
+
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import xHeader from "../../components/header";
-import xFooter from "../../components/footer";
+import xAside from "../../components/aside";
 export default {
   name: "Home",
+  created(){
+    this.getDate();
+  },
   data() {
-    return {};
+    return {
+      date: "",
+    };
   },
   methods: {
+    getDate(){
+      let time = new Date()
+      this.date = time.toString();
+    }
   },
-  computed: {},
   components: {
     "x-header": xHeader,
-    "x-footer": xFooter
+    "x-aside": xAside
   }
 };
 </script>
@@ -73,3 +71,4 @@ export default {
 <style lang="scss" scoped>
 @import "../../style/home.scss";
 </style>
+

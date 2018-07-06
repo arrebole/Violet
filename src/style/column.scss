@@ -8,10 +8,6 @@ article {
   padding-bottom: 30px;
 }
 
-.r-column-nav {
-  @include nav();
-}
-
 .r-column-wrapper {
   @include box();
   @include shadow();

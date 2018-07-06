@@ -4,8 +4,9 @@ article {
   min-height: 910px;
 }
 
-.r-error-nav {
-  @include nav;
+.r-error-content{
+  @include box();
+  padding: 20px;
 }
 
 .error-font-title {

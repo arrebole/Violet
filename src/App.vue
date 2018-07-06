@@ -28,8 +28,5 @@ export default {
 /* .component-fade-leave-active for below version 2.1.8 */ {
   opacity: 0;
 }
-//导航 "/" color
-.r-breadcrumb-separator {
-  color: #d1a13a;
-}
+
 </style>

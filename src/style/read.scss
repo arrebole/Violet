@@ -32,10 +32,6 @@
   }
 }
 
-.r-read-nav {
-  @include nav();
-}
-
 @media screen and (min-width: 575px) {
   @include read();
 }

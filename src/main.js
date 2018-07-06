@@ -7,34 +7,56 @@ import store from './store/store.js'
 
 Vue.config.productionTip = false;
 
-// iview
+// 第三方css
+import 'normalize.css/normalize.css';
 import 'iview/dist/styles/iview.css';
+import 'element-ui/lib/theme-chalk/index.css';
+import 'element-ui/lib/theme-chalk/display.css';
+
 import {
-  Row,
-  Col,
   Icon,
   Card,
-  Breadcrumb,
-  BreadcrumbItem,
   Avatar,
   Tag,
   Collapse,
   Panel,
   Page,
-  Spin
+  Spin,
+  Menu,
+  MenuItem,
+  Submenu,
+  Layout,
+  Sider,
+  Button
 } from 'iview';
-Vue.component('ivu-row', Row);
-Vue.component('ivu-col', Col);
+
 Vue.component('ivu-icon', Icon);
 Vue.component('ivu-card', Card);
-Vue.component('ivu-breadcrumb', Breadcrumb);
-Vue.component('ivu-breadcrumbItem', BreadcrumbItem);
 Vue.component('ivu-avatar', Avatar);
 Vue.component('ivu-tag', Tag);
 Vue.component('ivu-collapse', Collapse);
 Vue.component('ivu-panel', Panel);
 Vue.component('ivu-page', Page);
-Vue.component('ivu-spin',Spin);
+Vue.component('ivu-spin', Spin);
+Vue.component("ivu-layout",Layout);
+Vue.component("ivu-sider",Sider);
+Vue.component("ivu-menu",Menu);
+Vue.component("ivu-menuItem",MenuItem);
+Vue.component("ivu-submenu",Submenu);
+Vue.component("ivu-button",Button);
+
+// element-ui
+import {
+  Col,
+  Row,
+  Breadcrumb,
+  BreadcrumbItem,
+} from 'element-ui';
+Vue.use(Col);
+Vue.use(Row);
+Vue.use(Breadcrumb);
+Vue.use(BreadcrumbItem);
+
 
 
 /* eslint-disable no-new */

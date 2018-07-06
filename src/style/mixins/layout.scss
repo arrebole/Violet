@@ -1,15 +1,9 @@
 @import '../common/var.scss';
-
 // 根据 header 设置 article
 @mixin article {
   background-color: #f7f8fa;
   min-height: 960px;
-  @media screen and (min-width: 768px){
-    padding-top: 56px;
-  }
-  @media screen and (max-width:768px){
-    padding-top: 40px;
-  }
+  padding-top: 50px;
 }
 
 //导航栏 "/" 间距
@@ -26,9 +20,3 @@
   width: 100%;
 }
 
-@mixin nav {
-  @include box();
-  @include ivu-breadcrumb-item-separator();
-  padding: 0px 15px;
-  padding-top: 7px;
-}

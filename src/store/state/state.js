@@ -1,6 +1,7 @@
 export default {
   system: {
     loading: false,
+    aside: false,
   },
   user: {},
   articles: {
