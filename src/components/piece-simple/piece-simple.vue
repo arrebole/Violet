@@ -5,7 +5,7 @@
     <div class="x-azm-header">
 
       <slot name="avatar">
-        <ivu-icon type="erlenmeyer-flask"></ivu-icon>
+        <ivu-icon type="pound"></ivu-icon>
       </slot>
 
       <slot name="author">
@@ -14,15 +14,17 @@
 
     </div>
 
+    <div class="x-azm-imgContain">
+      <router-link :to="{ name:'Column', params: { cvId: link }}" class="x-azm-imga">
+        <img class="x-azm-img" :src="cover" />
+      </router-link>
+    </div>
+
     <div class="x-azm-title">
       <slot name="title">
         <h2>数据错误</h2>
       </slot>
     </div>
-
-    <router-link :to="{ name:'Column', params: { cvId: link }}" class="x-azm-imga">
-      <img class="x-azm-img" :src="cover" />
-    </router-link>
 
     <div class="x-azm-description">
       <slot name="description">
@@ -37,25 +39,29 @@
 <script>
 export default {
   name: "xPieceSimple",
-  props:['cover','link']
+  props: ["cover", "link"]
 };
 </script>
 
 <style lang="scss" scoped>
+
+$space:10px;
+
+
 @mixin x-az-module($margin) {
   .x-az-module {
     width: 100%;
     background-color: #fff;
     overflow: hidden;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
-    margin: 5px 0 $margin 0;
+    margin: 20px 0 $margin 0;
     border-radius: 5px;
   }
 }
 
 @mixin x-azm-description($font-size, $padding) {
   .x-azm-description {
-    padding: $padding 10px $padding 10px;
+    padding: $padding 10px;
     color: #999;
     p {
       font-size: $font-size;
@@ -65,7 +71,7 @@ export default {
 
 .x-azm-header {
   width: 100%;
-  padding: 10px 10px 0px 10px;
+  padding: 8px $space;
   img {
     box-sizing: border-box;
     vertical-align: middle;
@@ -75,8 +81,12 @@ export default {
   span {
     padding-left: 3px;
     font-size: 12px;
-    color: #999;
+    color: rgb(139, 139, 139);
   }
+}
+
+.x-azm-imgContain {
+  padding: 0 0;
 }
 
 .x-azm-img {
@@ -88,12 +98,13 @@ export default {
 }
 
 .x-azm-title > h2 {
+  padding: 3px $space;
   font-size: 16px;
-  padding: 0px 10px 0px 10px;
+  color: rgb(75, 75, 75);
 }
 
 @media screen and (min-width: 480px) {
-  @include x-azm-description($font-size: 14px, $padding: 15px);
+  @include x-azm-description($font-size: 14px, $padding: 8px);
 }
 
 @media screen and (max-width: 480px) {

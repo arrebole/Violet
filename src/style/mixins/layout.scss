@@ -6,6 +6,13 @@
   padding-top: 50px;
 }
 
+@mixin Bgc {
+  html,
+  body {
+    background-color: #f7f8fa;
+  }
+}
+
 //导航栏 "/" 间距
 @mixin ivu-breadcrumb-item-separator {
   .ivu-breadcrumb-item-separator {
@@ -19,4 +26,3 @@
   margin: auto;
   width: 100%;
 }
-

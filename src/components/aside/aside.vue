@@ -1,23 +1,39 @@
 <template>
 
-  <div @click="changeAside()" class="x-aside" v-if="system.aside">
-    <ul class="x-aside-nav">
-      <router-link tag="li" :to="{ name: 'Articles' }">
-        <ivu-icon type="ios-paper"></ivu-icon> 文章区
-      </router-link>
-      <router-link tag="li" :to="{ name: 'Video' }">
-        <ivu-icon type="beer"></ivu-icon> 视频区
-      </router-link>
-      <router-link tag="li" :to="{ name: 'Firmware' }">
-        <ivu-icon type="cube"></ivu-icon> 固件区
-      </router-link>
-      <router-link tag="li" :to="{ name: 'Images' }">
+  <div class="x-aside" v-if="system.aside">
+    <el-menu class="x-aside-menu" router :default-openeds="['2']" :default-active="$route.path">
 
-        <ivu-icon type="image"></ivu-icon> 壁纸区
-      </router-link>
+      <el-submenu index="1">
+        <template slot="title">
+          <i class="el-icon-setting"></i>
+          <span slot="title">管理</span>
+        </template>
+        <el-menu-item-group>
+          <span slot="title">数据库改动</span>
+          <el-menu-item index="1-1" :route="{ name:'Administration' }">全部列表</el-menu-item>
+          <el-menu-item index="1-2" :route="{ name:'Administration' }">针对查询</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
 
-    </ul>
-    
+      <el-submenu index="2">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span slot="title">导航</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item index="2-1" :route="{ name:'Articles' }">文章区</el-menu-item>
+          <el-menu-item index="2-2" :route="{ name:'Firmware' }">固件区</el-menu-item>
+          <el-menu-item index="2-3" :route="{ name:'Video' }" >视频区</el-menu-item>
+          <el-menu-item index="2-4" :route="{ name:'Images' }" >图片区</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+
+    </el-menu>
+
+    <div @click="changeAside" class="x-aside-fill">
+
+    </div>
+
   </div>
 
 </template>
@@ -42,25 +58,22 @@ export default {
 <style lang="scss" scoped>
 .x-aside {
   position: fixed;
+  display: inline-flex;
   margin-top: 50px;
   z-index: 100;
-  width: 100%;
   height: 100%;
+  width: 100%;
   cursor: pointer;
 }
-.x-aside-nav {
-  background-color: #fff;
+.x-aside-menu {
+  display: inline-block;
   height: 100%;
-  width: 250px;
-  border-right: 1px solid rgb(221, 221, 221);
-  padding-top: 20px;
-  li {
-    height: 50px;
-    padding-left: 20%;
-    line-height: 50px;
-    &:hover {
-      background-color: rgb(231, 231, 231);
-    }
-  }
+  width: 240px;
+}
+
+.x-aside-fill{
+  height: 100%;
+  width: 100%;
+  
 }
 </style>

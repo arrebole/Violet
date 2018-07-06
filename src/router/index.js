@@ -6,6 +6,7 @@ import Articles from '../views/articles';
 import Error from "../views/error";
 import Column from "../views/column";
 import Read from "../views/read";
+import Administration from "../views/admin";
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/articles/cv:cvId/page:page',
       name:'Read',
       component: Read
+    },
+    {
+      path: 'admin',
+      name: "Administration",
+      component: Administration
     },
     {
       path: '/video',

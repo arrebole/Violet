@@ -22,12 +22,8 @@ import {
   Panel,
   Page,
   Spin,
-  Menu,
-  MenuItem,
-  Submenu,
   Layout,
-  Sider,
-  Button
+  Sider
 } from 'iview';
 
 Vue.component('ivu-icon', Icon);
@@ -38,12 +34,8 @@ Vue.component('ivu-collapse', Collapse);
 Vue.component('ivu-panel', Panel);
 Vue.component('ivu-page', Page);
 Vue.component('ivu-spin', Spin);
-Vue.component("ivu-layout",Layout);
-Vue.component("ivu-sider",Sider);
-Vue.component("ivu-menu",Menu);
-Vue.component("ivu-menuItem",MenuItem);
-Vue.component("ivu-submenu",Submenu);
-Vue.component("ivu-button",Button);
+Vue.component("ivu-layout", Layout);
+Vue.component("ivu-sider", Sider);
 
 // element-ui
 import {
@@ -51,11 +43,19 @@ import {
   Row,
   Breadcrumb,
   BreadcrumbItem,
+  Menu,
+  Submenu,
+  MenuItem,
+  MenuItemGroup,
 } from 'element-ui';
 Vue.use(Col);
 Vue.use(Row);
 Vue.use(Breadcrumb);
 Vue.use(BreadcrumbItem);
+Vue.use(Menu);
+Vue.use(Submenu);
+Vue.use(MenuItem);
+Vue.use(MenuItemGroup);
 
 
 

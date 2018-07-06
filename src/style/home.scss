@@ -3,6 +3,8 @@
 //-------------轮播图------------
 
 /*--- 实现 ---*/ 
+@include Bgc();
+
 article{
   @include article();
 }

@@ -1,5 +1,8 @@
 @import 'mixins/layout.scss';
 
+
+@include Bgc();
+
 article {
   @include article;
   padding-bottom: 60px;
