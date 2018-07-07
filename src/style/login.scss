@@ -1,0 +1,11 @@
+@import 'mixins/layout.scss';
+
+article {
+    @include article();
+}
+.r-login-form{
+    @include box();
+    margin-top: 50px;
+    font-size: 16px;
+    padding: 20px;
+}

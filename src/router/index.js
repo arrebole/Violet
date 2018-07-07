@@ -6,7 +6,8 @@ import Articles from '../views/articles';
 import Error from "../views/error";
 import Column from "../views/column";
 import Read from "../views/read";
-import Administration from "../views/admin";
+import { AdminDatabase } from "../views/admin";
+import Login from "../views/login";
 
 Vue.use(Router)
 
@@ -33,9 +34,14 @@ export default new Router({
       component: Read
     },
     {
-      path: 'admin',
-      name: "Administration",
-      component: Administration
+      path: '/admin/database',
+      name: "AdminDatabase",
+      component: AdminDatabase,
+    },
+    {
+      path: '/login',
+      name:"Login",
+      component: Login
     },
     {
       path: '/video',

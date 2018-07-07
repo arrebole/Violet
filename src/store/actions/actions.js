@@ -6,19 +6,24 @@ import {
   STE_VIEWS_COLUMN,
   STE_VIEWS_READ,
   SET_SYSTEM_ASIDE_DISPLAY,
-  SET_SYSTEM_ASIDE_SHOW
+  SET_SYSTEM_ASIDE_SHOW,
+  CHANGE_SYSTEM_LOGIN
 } from '../mutations/mutation-types';
 
 export default {
   // get views data to state
-  changeAside(context){
+  changeAside(context) {
     context.commit(CHANGE_SYSTEM_ASIDE);
   },
-  displayAside(context){
+  displayAside(context) {
     context.commit(SET_SYSTEM_ASIDE_DISPLAY);
   },
-  showAside(context){
+  showAside(context) {
     context.commit(SET_SYSTEM_ASIDE_SHOW);
+  },
+  changeLogin(context) {
+    context.commit(CHANGE_SYSTEM_LOGIN);
+
   },
   async fetchArticles(context) {
     context.commit(CHANGE_SYSTEM_LOADING);

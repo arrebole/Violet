@@ -1,5 +1,5 @@
 @import 'mixins/layout.scss';
-@include Bgc();
+
 article {
   @include article;
   min-height: 910px;

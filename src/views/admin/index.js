@@ -1,2 +1,3 @@
-import Administration from "./admin.vue";
-export default Administration;
+import AdminDatabase from "./admin-database.vue";
+
+export { AdminDatabase };

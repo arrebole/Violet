@@ -3,8 +3,12 @@
  * 
  */
 
-// 数据库操作
+
+const Router = require("koa-router");
 const redisClient = require("../redis");
+const router = new Router();
+
+router.get("/",column);
 
 //router.get("/v1/views/articles/cv:id", columm);
 async function column(ctx, next) {
@@ -42,4 +46,4 @@ async function column(ctx, next) {
 }
 
 
-module.exports = column;
+module.exports = router;

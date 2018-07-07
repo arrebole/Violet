@@ -6,6 +6,7 @@ import {
   CHANGE_SYSTEM_ASIDE,
   SET_SYSTEM_ASIDE_DISPLAY,
   SET_SYSTEM_ASIDE_SHOW,
+  CHANGE_SYSTEM_LOGIN
 } from './mutation-types.js';
 
 export default {
@@ -18,6 +19,9 @@ export default {
   },
   [SET_SYSTEM_ASIDE_SHOW](state){
     state.system.aside = true;
+  },
+  [CHANGE_SYSTEM_LOGIN](state){
+    state.system.login = true; 
   },
   // change loading 数据
   [CHANGE_SYSTEM_LOADING](state) {

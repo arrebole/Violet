@@ -1,22 +1,36 @@
 export default {
   system: {
+    admin: false,
     loading: false,
     aside: false,
   },
+  login: {
+    root: {
+      password: 'arrebol123'
+    },
+    xiaomaolv: {
+      password: 'xiaomaolv123'
+    },
+    youpangxie: {
+      password: 'youpangxie123'
+    },
+    wu: {
+      password: 'wu123'
+    }
+  },
   user: {},
   articles: {
-    status:{},
+    status: {},
     major: []
   },
   column: {
-    info:{
-    },
-    major:{}
+    info: {},
+    major: {}
   },
   read: {
-    info:{},
-    major:{
-      text:""
+    info: {},
+    major: {
+      text: ""
     }
   },
   error: {},

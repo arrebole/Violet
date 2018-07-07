@@ -9,9 +9,8 @@
           <span slot="title">管理</span>
         </template>
         <el-menu-item-group>
-          <span slot="title">数据库改动</span>
-          <el-menu-item index="1-1" :route="{ name:'Administration' }">全部列表</el-menu-item>
-          <el-menu-item index="1-2" :route="{ name:'Administration' }">针对查询</el-menu-item>
+          <span slot="title">超级管理</span>
+          <el-menu-item index="1-1" :route="{ name:'AdminDatabase' }">数据库操作</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 

@@ -4,8 +4,11 @@
  * 读取数据库,经过构造函数,响应json;
  * 
  */
+const Router = require("koa-router");
 const redisClient = require("../redis");
+const router = new Router();
 
+router.get("/",articles);
 
 async function articles(ctx, next) {
   var query = ctx.request.query;
@@ -86,4 +89,4 @@ async function articles(ctx, next) {
 
 }
 
-module.exports = articles;
+module.exports = router;

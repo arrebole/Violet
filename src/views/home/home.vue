@@ -15,7 +15,7 @@
 
     <article>
 
-      <section class="user-info">
+      <section class="r-home-info">
 
         <h1>系统信息</h1>
 

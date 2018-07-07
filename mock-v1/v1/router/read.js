@@ -1,4 +1,8 @@
+const Router = require("koa-router");
 const redisClient = require("../redis");
+const router = new Router();
+
+router.get("/",read);
 
 async function read(ctx, next) {
   var cv = 'cv' + ctx.params.id;
@@ -58,4 +62,4 @@ async function read(ctx, next) {
 }
 
 
-module.exports = read;
+module.exports = router;

@@ -3,13 +3,12 @@
 //-------------轮播图------------
 
 /*--- 实现 ---*/ 
-@include Bgc();
 
 article{
   @include article();
 }
 
-.user-info{
+.r-home-info{
   @include box();
   padding: 20px;
 }
