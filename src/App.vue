@@ -13,7 +13,7 @@ export default {
   name: "App",
   data() {
     return {
-      cachedViews: ["Home","Articles"]
+      cachedViews: ["Home","Articles","AdminDatabase"]
     };
   }
 };

@@ -2,7 +2,8 @@ import {
   STE_VIEWS_ARTICLES,
   STE_VIEWS_COLUMN,
   STE_VIEWS_READ,
-  CHANGE_SYSTEM_LOADING,
+  SET_SYSTEM_LOADING_TRUE,
+  SET_SYSTEM_LOADING_FALSE,
   CHANGE_SYSTEM_ASIDE,
   SET_SYSTEM_ASIDE_DISPLAY,
   SET_SYSTEM_ASIDE_SHOW,
@@ -24,12 +25,16 @@ export default {
     state.system.login = true; 
   },
   // change loading 数据
-  [CHANGE_SYSTEM_LOADING](state) {
-    state.system.loading = !state.system.loading;
+  [SET_SYSTEM_LOADING_TRUE](state) {
+    state.system.loading = true;
+  },
+  [SET_SYSTEM_LOADING_FALSE](state){
+    state.system.loading = false;
+
   },
   // 往state添加 views.article 数据
   [STE_VIEWS_ARTICLES](state, payload) {
-    state.articles.status = payload.data.status;
+    state.articles.info = payload.data.info;
     for (let i = 0; i < payload.data.major.length; i++) {
       state.articles.major.push(payload.data.major[i])
     }

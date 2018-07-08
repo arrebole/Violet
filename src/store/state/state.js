@@ -20,7 +20,7 @@ export default {
   },
   user: {},
   articles: {
-    status: {},
+    info: {},
     major: []
   },
   column: {

@@ -72,7 +72,7 @@ async function articles(ctx, next) {
     constructor(total, data) {
       // 计算剩余数量
       let num = total - limit - offset;
-      this.status = {
+      this.info = {
         limit,
         offset,
         total,
