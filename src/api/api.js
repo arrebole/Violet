@@ -26,8 +26,11 @@ const api = {
   }) {
     return axios.get(`/v1/views/articles/cv${cvId}/page${page}`);
   },
-  dbArticlesList() {
+  dbList() {
     return axios.get('/v1/admin/articles/all');
+  },
+  dbAdd(){
+    return axios.get("/v1/admin/article/add");
   }
 
 }

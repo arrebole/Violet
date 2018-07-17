@@ -1,9 +1,9 @@
 <template>
-  <div class="db-app">
+  <div class="db-update-app">
     <x-header>
       <el-breadcrumb separator="/" slot="x-hn-item">
         <el-breadcrumb-item :to="{ name: 'Home' }">Arrebol</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ name: 'AdminDatabase'}">database</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ name: 'DbUpdate'}">update</el-breadcrumb-item>
       </el-breadcrumb>
     </x-header>
 
@@ -66,13 +66,13 @@ import xHeader from "../../components/header";
 import xAside from "../../components/aside";
 import xSlackLoader from "../../components/slack-loader";
 export default {
-  name: "AdminDatabase",
+  name: "DbUpdate",
   created() {
     this.getDate();
   },
   data() {
     return {
-      loading: false,
+      loading: true,
       search: "",
       select: "",
       user: {},
@@ -111,10 +111,8 @@ export default {
   },
   methods: {
     async getDate() {
-      this.loading = true;
-      let temp = await api.dbArticlesList();
+      let temp = await api.dbList();
       this.articlesList = temp.data;
-      temp = null;
       this.loading = false;
     }
   },
@@ -128,6 +126,6 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "../../style/admin-database.scss";
+@import "../../style/db-update.scss";
 </style>
 

@@ -10,7 +10,8 @@
         </template>
         <el-menu-item-group>
           <span slot="title">超级管理</span>
-          <el-menu-item index="1-1" :route="{ name:'AdminDatabase' }">数据库操作</el-menu-item>
+          <el-menu-item index="1-1" :route="{ name:'DbAdd' }">添加数据</el-menu-item>
+          <el-menu-item index="1-2" :route="{ name:'DbUpdate' }">修改数据</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 

@@ -1,3 +1,4 @@
-import AdminDatabase from "./admin-database.vue";
+import DbUpdate from "./db-update.vue";
+import DbAdd from "./db-add.vue";
 
-export { AdminDatabase };
+export { DbUpdate,DbAdd };

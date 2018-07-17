@@ -6,7 +6,10 @@ import Articles from '../views/articles';
 import Error from "../views/error";
 import Column from "../views/column";
 import Read from "../views/read";
-import { AdminDatabase } from "../views/admin";
+import {
+  DbUpdate,
+  DbAdd,
+} from "../views/admin";
 import Login from "../views/login";
 
 Vue.use(Router)
@@ -30,17 +33,21 @@ export default new Router({
     },
     {
       path: '/articles/cv:cvId/page:page',
-      name:'Read',
+      name: 'Read',
       component: Read
     },
     {
-      path: '/admin/database',
-      name: "AdminDatabase",
-      component: AdminDatabase,
+      path: '/admin/db/update',
+      name: "DbUpdate",
+      component: DbUpdate,
+    }, {
+      path: '/admin/db/add',
+      name: "DbAdd",
+      component: DbAdd,
     },
     {
       path: '/login',
-      name:"Login",
+      name: "Login",
       component: Login
     },
     {
