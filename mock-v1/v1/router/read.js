@@ -31,21 +31,18 @@ async function read(ctx, next) {
 
 
   // 获取 origin
-  SQLQuery = [
-    ['hget', cv, 'author'],
-    ['hget', cv, 'title']
-  ]
+  //SQLQuery = [
+  //  ['hget', cv, 'author'],
+  //  ['hget', cv, 'title']
+  //]
   redisClient.select(2);
-  var caching4 = await redisClient.pipeline(SQLQuery).exec();
-  var author = caching4[0][1];
-  var origin = caching4[1][1];
+  //var caching4 = await redisClient.pipeline(SQLQuery).exec();
+  //var author = caching4[0][1];
+  //var origin = caching4[1][1];
 
 
   var data = {
     page_title,
-    author,
-    update,
-    origin,
     text
   }
 

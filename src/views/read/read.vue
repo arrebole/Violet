@@ -24,13 +24,7 @@
       <template v-else>
 
         <section class="r-read-itemInfo">
-          <h1>{{ read.page_title }}</h1>
-          <p>
-            <span>书名: {{ read.origin }}</span>
-            <span>作者: {{ read.author }}</span>
-            <span>更新时间: {{ read.update }}</span>
-          </p>
-          <hr/>
+          <h1> 第{{ $route.params.page }}章: {{ read.page_title }}</h1>
         </section>
         <section class="r-read-itemMajor">
           <div class="r-read-majorTxt" v-html="markdown"></div>

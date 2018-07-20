@@ -7,19 +7,11 @@
   .r-read-itemInfo {
     @include box();
     margin-top: 10px;
-    padding: 20px 0px;
     background-color: #fff;
-    text-align: center;
-    h1 {
-      font-size: 20px;
-      margin: 5px 0;
-    }
-    p {
-      padding: 10px 0;
-      span {
-        @content;
-        margin: 0px 10px;
-      }
+    min-height: 60px;
+    padding: 20px;
+    h1{
+      color: rgb(90, 90, 90);
     }
   }
   .r-read-itemMajor {
@@ -28,7 +20,7 @@
     min-height: 900px;
     background-color: #fff;
     .r-read-majorTxt {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
@@ -38,10 +30,6 @@
 }
 
 @media screen and (max-width: 575px) {
-  @include read() {
-    display: block;
-    padding: 3px 0;
-  }
-  ;
+  @include read();
 }
 
