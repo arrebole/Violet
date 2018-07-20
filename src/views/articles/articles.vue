@@ -24,14 +24,15 @@
 
         <section class="r-article-list">
 
-          <template v-for="(column,index) in articles.major">
+          <template v-for="(column,index) in articles">
 
-            <x-piece-simple :key="index" :cover="column.cover" :link="column.cv_id.slice(2)">
-              <ivu-icon slot="avatar" type="pound"></ivu-icon>
-              <span slot="author">{{ column.author }}</span>
-              <h2 slot="title">{{ column.title }}</h2>
-              <p slot="description">{{ column.brief }}</p>
-
+            <x-piece-simple 
+            :key="'column'+ index" 
+            :cover="column.cover" 
+            :link="column.cv_id.slice(2)"
+            :topic="column.topic"
+            :title="column.title"
+            >
             </x-piece-simple>
 
           </template>

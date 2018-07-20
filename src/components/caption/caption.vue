@@ -2,7 +2,7 @@
   <div class="x-caption">
     <!-- COVER -->
     <div class="x-caption-cover">
-      <img :src="ico" />
+      <img :src="icon" />
     </div>
     <!-- INFO -->
     <div class="x-caption-info">
@@ -23,7 +23,7 @@
 <script>
 export default {
   name: "xCaption",
-  props:['title','author','version','update','ico']
+  props:['title','author','version','update','icon']
 };
 </script>
 

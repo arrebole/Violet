@@ -1,7 +1,5 @@
 import {
   STE_VIEWS_ARTICLES,
-  STE_VIEWS_COLUMN,
-  STE_VIEWS_READ,
   SET_SYSTEM_LOADING_TRUE,
   SET_SYSTEM_LOADING_FALSE,
   CHANGE_SYSTEM_ASIDE,
@@ -34,19 +32,12 @@ export default {
   },
   // 往state添加 views.article 数据
   [STE_VIEWS_ARTICLES](state, payload) {
-    state.articles.info = payload.data.info;
-    for (let i = 0; i < payload.data.major.length; i++) {
-      state.articles.major.push(payload.data.major[i])
+    // 剩余数量
+    state.system.remain.articles = payload.data.remain;
+    for (let i of payload.data.date) {
+      state.articles.push(i);
     }
   },
-  [STE_VIEWS_COLUMN](state, payload) {
-    state.column.info = payload.data.info;
-    state.column.major = payload.data.major;
-  },
-  [STE_VIEWS_READ](state,payload){
-    state.read.info =payload.data.info;
-    state.read.major = payload.data.major;
-  }
 
 
 }

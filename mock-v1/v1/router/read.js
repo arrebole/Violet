@@ -41,24 +41,23 @@ async function read(ctx, next) {
   var origin = caching4[1][1];
 
 
-  var info = {
+  var data = {
     page_title,
     author,
     update,
-    origin
+    origin,
+    text
   }
 
   class structure {
-    constructor(info, text) {
-      this.info = info;
-      this.major = {
-        text: text
-      };
+    constructor(data) {
+      this.code =0;
+      this.data = data
     }
   }
 
   ctx.type = 'json';
-  ctx.body = JSON.stringify(new structure(info, text))
+  ctx.body = JSON.stringify(new structure(data))
 }
 
 

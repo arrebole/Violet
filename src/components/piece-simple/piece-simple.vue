@@ -2,34 +2,22 @@
 
   <div class="x-az-module">
 
-    <div class="x-azm-header">
-
-      <slot name="avatar">
-        <ivu-icon type="pound"></ivu-icon>
-      </slot>
-
-      <slot name="author">
-        <span>Arrebol</span>
-      </slot>
-
-    </div>
-
+    <!-- 封面 -->
     <div class="x-azm-imgContain">
       <router-link :to="{ name:'Column', params: { cvId: link }}" class="x-azm-imga">
         <img class="x-azm-img" :src="cover" />
       </router-link>
     </div>
 
-    <div class="x-azm-title">
-      <slot name="title">
-        <h2>数据错误</h2>
-      </slot>
-    </div>
+    <div class="x-azm-infoContain">
+      <div class="x-azmi-topic">
+        <h3>{{ topic }}</h3>
+      </div>
 
-    <div class="x-azm-description">
-      <slot name="description">
-        <p>暂时拿来排版,内容毫无关系.</p>
-      </slot>
+      <div class="x-azmi-title">
+        <h1>{{ title }}</h1>
+      </div>
+
     </div>
 
   </div>
@@ -37,9 +25,10 @@
 </template>
 
 <script>
+
 export default {
   name: "xPieceSimple",
-  props: ["cover", "link"]
+  props: ["cover", "link","topic","title"]
 };
 </script>
 
@@ -59,59 +48,36 @@ $space:10px;
   }
 }
 
-@mixin x-azm-description($font-size, $padding) {
-  .x-azm-description {
-    padding: $padding 10px;
-    color: #999;
-    p {
-      font-size: $font-size;
-    }
-  }
-}
 
-.x-azm-header {
-  width: 100%;
-  padding: 8px $space;
-  img {
-    box-sizing: border-box;
-    vertical-align: middle;
-    width: 19px;
-    height: 19px;
-  }
-  span {
-    padding-left: 3px;
-    font-size: 12px;
-    color: rgb(139, 139, 139);
-  }
-}
 
 .x-azm-imgContain {
   padding: 0 0;
 }
 
 .x-azm-img {
+  min-height: 250px;
   width: 100%;
+  object-fit: cover;
+  object-position: 80%;
   display: block;
 }
 .x-azm-imga {
   display: inline;
 }
 
-.x-azm-title > h2 {
-  padding: 3px $space;
-  font-size: 16px;
-  color: rgb(75, 75, 75);
+.x-azm-infoContain{
+  padding: 15px 10px;
 }
 
-@media screen and (min-width: 480px) {
-  @include x-azm-description($font-size: 14px, $padding: 8px);
+
+.x-azmi-topic{
+  color: rgb(189, 189, 189);
+  padding-left: 10px;
 }
 
-@media screen and (max-width: 480px) {
-  @include x-azm-description($font-size: 8px, $padding: 5px);
+.x-azmi-title{
+  padding-left: 10px;
 }
-
-//---------------------------
 
 @media screen and (min-width: 1200px) {
   @include x-az-module($margin: 60px);

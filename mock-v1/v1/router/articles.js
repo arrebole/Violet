@@ -61,27 +61,32 @@ async function articles(ctx, next) {
   };
   redisClient.select(2);
   var caching3 = await redisClient.pipeline(SQLQuery).exec();
-  var data = [];
+  var all = [];
   for (let i = 0; i < SQLQuery.length; i++) {
-    data.push(caching3[i][1])
+    all.push(caching3[i][1])
   }
 
+  var data =[];
+  all.forEach((item, index)=>{
+    var one = {};
+    one.cv_id = item.cv_id;
+    one.cover = item.cover;
+    one.title = item.title;
+    one.topic = item.topic;
+    data.push(one);
+  })
   // 响应结果
   // json 结构
   class structure {
-    constructor(total, data) {
+    constructor(data) {
       // 计算剩余数量
-      let num = total - limit - offset;
-      this.info = {
-        limit,
-        offset,
-        total,
-        remain: num >= 0 ? num : 0
-      }
-      this.major = data;
+      let ifRemain = total - limit - offset;
+      this.code = 0;
+      this.remain = (ifRemain >= 0) ? ifRemain : 0;
+      this.date = data;
     }
   }
-  var res = new structure(total, data);
+  var res = new structure(data);
 
 
   ctx.response.type = 'json';

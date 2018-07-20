@@ -15,20 +15,20 @@
 
         <article>
 
-            <ivu-spin v-if="system.loading" fix>
+            <ivu-spin v-if="loading" fix>
                 <x-slack-loader></x-slack-loader>
             </ivu-spin>
 
             <template v-else>
                 <!-- 标题信息 -->
                 <section class="r-column-wrapper">
-                    <x-caption :title="column.info.title" :author="column.info.author" :version="column.info.version" :update="column.info.update" :ico="column.info.ico" />
+                    <x-caption :title="column.title" :author="column.author" :version="column.version" :update="column.update" :icon="column.icon" />
                 </section>
                 <!-- 简述 -->
                 <section class="r-column-introduce">
                     <div class="r-E_introduce-txt">
                         <h2>简介</h2>
-                        <p>{{ column.info.description }}</p>
+                        <p>{{ column.description }}</p>
                     </div>
                 </section>
                 <!-- 目录 -->
@@ -38,7 +38,7 @@
                         <h2>全部目录</h2>
                     </div>
                     <!--  -->
-                    <template v-for="(item,index) in column.major">
+                    <template v-for="(item,index) in column.dir">
                         <div class="r-ed-p" :key="index">
                             <router-link :to="{ name: 'Read',params:{ cvId: $route.params.cvId, page:index } }">第 {{ index }} 章: {{ item['P'+ index] }}</router-link>
                             <ivu-icon type="chevron-right"></ivu-icon>
@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import api from "../../api";
 import { mapActions, mapState } from "vuex";
 import marked from "marked";
 import xHeader from "../../components/header";
@@ -80,11 +81,16 @@ import xAside from "../../components/aside";
 export default {
   name: "Column",
   created() {
-    this.fetchColumn("cv" + this.$route.params.cvId);
+    this.fetchDate("cv" +this.$route.params.cvId);
+  },
+  data(){
+      return {
+          loading: true,
+          column:{},
+      }
   },
   computed: {
     ...mapState({
-      column: "column",
       system: "system"
     }),
     description() {
@@ -92,9 +98,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions({
-      fetchColumn: "fetchColumn",
-    })
+      async fetchDate(cv){
+          this.loading = true;
+          let temp = await api.column(cv);
+          this.column = temp.data.date;
+          this.loading = false;
+      }
   },
   components: {
     "x-header": xHeader,
